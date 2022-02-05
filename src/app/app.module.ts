@@ -4,16 +4,20 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { RxjsOperatorsComponent } from './components/rxjs-operators/rxjs-operators.component';
+
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    RxjsOperatorsComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    
   ],
   providers: [],
   bootstrap: [AppComponent]
