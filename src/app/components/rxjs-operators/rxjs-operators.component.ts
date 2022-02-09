@@ -8,11 +8,11 @@ import { Observable } from 'rxjs';
   styleUrls: ['./rxjs-operators.component.scss']
 })
 export class RxjsOperatorsComponent implements OnInit {
-  $data:Observable<string[]>;
+  data$:Observable<string[]>;
  
     
   constructor(private mock:JsonServerMockEndpointService){
-    this.$data = this.mock.getJsonServerMock();
+    this.data$ = this.mock.getJsonServerMock();
   }
   ngOnInit(): void {
   }
