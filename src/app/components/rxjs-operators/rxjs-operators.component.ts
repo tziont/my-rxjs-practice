@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { JsonServerMockEndpointService } from '../../services/json-server-mock-endpoint.service';
+import { SubjectsService } from '../../services/subjects.service';
 import { Observable } from 'rxjs';
+import { FormBuilder,FormControl,FormGroup} from "@angular/forms";
 
 @Component({
   selector: 'app-rxjs-operators',
@@ -8,13 +9,23 @@ import { Observable } from 'rxjs';
   styleUrls: ['./rxjs-operators.component.scss']
 })
 export class RxjsOperatorsComponent implements OnInit {
-  data$:Observable<string[]>;
- 
+  data$:Observable<string>;
+  form:FormGroup;
     
-  constructor(private mock:JsonServerMockEndpointService){
-    this.data$ = this.mock.getJsonServerMock();
-  }
+  constructor( private subjectsService:SubjectsService,
+               private fb: FormBuilder){ }
   ngOnInit(): void {
-  }
 
+    this.data$ = this.subjectsService.getObservableA();
+    this.form = this.fb.group({
+      stringCtrl: [''],
+    })
+  }
+  insertString(a: string){
+    this.subjectsService.streemA$.next(a);
+  }
+  changeString(){
+    const newString = this.form.get('stringCtrl')?.value
+    this.subjectsService.streemA$.next(newString);
+  }
 }

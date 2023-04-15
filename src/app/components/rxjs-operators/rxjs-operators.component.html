@@ -1,8 +1,10 @@
+{{ data$ | async}}
+<button (click)="insertString('Hi from behavier subject A') ">insert string</button>
+<div [formGroup] = 'form'>
+  <input type="text" formControlName="stringCtrl" (keyup)="changeString()">
+</div>
 <div>
-    <h1>Practice the RxJS operators via service</h1>
-    <ul>
-      <li *ngFor="let item of data$ | async">
-       <a  href= '{{item}}' >{{item}}</a>
-      </li>
-    </ul>
-  </div>
+  <app-child-component></app-child-component>
+</div>
+
+

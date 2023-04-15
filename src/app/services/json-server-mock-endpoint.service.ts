@@ -12,7 +12,7 @@ export class JsonServerMockEndpointService {
 url= 'https://jsonplaceholder.typicode.com/photos'
   getJsonServerMock(){
     return this.http.get<Photo[]>(`${this.url}`).pipe(map((res: Photo[]) => {
-      return res.map(photo => photo.thumbnailUrl )
+      return res.map(photo => photo.albumId )
     }));
   }
 }
