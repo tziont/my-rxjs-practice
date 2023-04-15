@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { filter, map } from 'rxjs/Operators';
+import { filter, map } from 'rxjs/operators';
 import { Photo } from '../typs/photoInterface';
 
 @Injectable({
@@ -12,7 +12,7 @@ export class JsonServerMockEndpointService {
 url= 'https://jsonplaceholder.typicode.com/photos'
   getJsonServerMock(){
     return this.http.get<Photo[]>(`${this.url}`).pipe(map((res: Photo[]) => {
-      return res.map(photo => photo.thumbnailUrl )
+      return res.map(photo => photo.albumId )
     }));
   }
 }

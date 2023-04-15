@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { RxJS.TsComponent } from './rx-js.ts.component';
+import { ChildComponentComponent } from './child-component.component';
 
-describe('RxJS.TsComponent', () => {
-  let component: RxJS.TsComponent;
-  let fixture: ComponentFixture<RxJS.TsComponent>;
+describe('ChildComponentComponent', () => {
+  let component: ChildComponentComponent;
+  let fixture: ComponentFixture<ChildComponentComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ RxJS.TsComponent ]
+      declarations: [ ChildComponentComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(RxJS.TsComponent);
+    fixture = TestBed.createComponent(ChildComponentComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
