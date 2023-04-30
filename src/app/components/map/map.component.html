@@ -1,0 +1,19 @@
+<h1>Map</h1>
+(In the example below the first map() is the RxJs map function and the second is a regular javascript map function)
+<h3>When the Observable is:</h3>
+
+<pre>
+<code>{{observableExample}} </code>
+</pre>
+
+<h3>And the rxjs manipulation is:</h3>
+<code>
+
+  <pre>{{manipulation}}</pre>
+</code>
+<h3>the output will be an observable that holds this data:</h3>
+<pre><code *ngIf="(employees$ | async | json ) as employees">
+{{employees}}
+</code></pre>
+
+

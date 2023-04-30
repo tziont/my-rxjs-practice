@@ -1,10 +1,17 @@
 {
-  "book": {
-    "title": "Moby Dick",
-    "author": {
-      "name": "Herman Melville",
-      "born": 1819
+  "employees": [
+  {
+      "id": 1,
+      "name": "Tony dtark",
+      "email": "tony@mcu.com",
+      "phone": "001-123-4567"
+    },
+    {
+      "id": 2,
+      "name": "Rami Tucko",
+      "email": "Rami@mcu.com",
+      "phone": "001-888-4567"
     }
-  }
+  ]
 }
 
