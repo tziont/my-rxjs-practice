@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnChanges, SimpleChanges } from '@angular/core';
 import { SubjectsService } from '../../services/subjects.service';
-import { Observable } from 'rxjs';
+import { Observable} from 'rxjs';
+import {  map } from 'rxjs/Operators';
 import { FormBuilder,FormControl,FormGroup} from "@angular/forms";
 
 @Component({
@@ -9,23 +10,22 @@ import { FormBuilder,FormControl,FormGroup} from "@angular/forms";
   styleUrls: ['./rxjs-operators.component.scss']
 })
 export class RxjsOperatorsComponent implements OnInit {
-  data$:Observable<string>;
+  data$:any;
   form:FormGroup;
     
   constructor( private subjectsService:SubjectsService,
                private fb: FormBuilder){ }
-  ngOnInit(): void {
 
-    this.data$ = this.subjectsService.getObservableA();
+  ngOnInit(): void {
+    this.data$ = this.subjectsService.getState();
     this.form = this.fb.group({
       stringCtrl: [''],
     })
   }
-  insertString(a: string){
-    this.subjectsService.streemA$.next(a);
+  
+  changeName(){
+   const data ={...this.data$, name:'Tzion', phone: '0547-832276', foodList: ['wow', 'what?']}
+   this.subjectsService.stateManagerSubject$.next(data);
   }
-  changeString(){
-    const newString = this.form.get('stringCtrl')?.value
-    this.subjectsService.streemA$.next(newString);
-  }
+
 }

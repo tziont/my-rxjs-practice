@@ -6,6 +6,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { RxjsOperatorsComponent } from './components/rxjs-operators/rxjs-operators.component';
 import { ChildComponentComponent } from './components/child-component/child-component.component';
+import { PhotosListComponent } from './components/photos-list/photos-list.component';
 
 
 
@@ -16,6 +17,7 @@ import { ChildComponentComponent } from './components/child-component/child-comp
     AppComponent,
     RxjsOperatorsComponent,
     ChildComponentComponent,
+    PhotosListComponent ,
   ],
   imports: [
     BrowserModule,

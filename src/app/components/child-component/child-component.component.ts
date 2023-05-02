@@ -8,12 +8,12 @@ import { SubjectsService } from 'src/app/services/subjects.service';
   styleUrls: ['./child-component.component.scss']
 })
 export class ChildComponentComponent implements OnInit {
-  data$: Observable<string>
-  
+  data$: Observable<{}>
+  datax:any
   constructor(private subjectsService:SubjectsService) { }
 
   ngOnInit(): void {
-    this.data$ = this.subjectsService.getObservableA();
+    this.data$ = this.subjectsService.getState();
   }
 
 }
