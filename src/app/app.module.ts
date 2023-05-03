@@ -5,13 +5,13 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MapComponent } from './components/map/map.component';
 import { SwitchMapComponent } from './components/switch-map/switch-map.component';
-import { MergeMapComponent } from './components/merge-map/merge-map.component';
+import { StateManagmentComponent } from './components/state managment/state-managment.component';
 @NgModule({
   declarations: [
     AppComponent,
     MapComponent,
     SwitchMapComponent,
-    MergeMapComponent,
+    StateManagmentComponent,
 
   ],
   imports: [
